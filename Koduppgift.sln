@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koduppgift", "Koduppgift\Koduppgift.csproj", "{00510749-7C98-4510-A93F-46AEBBDA1BC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoduppgiftTests", "KoduppgiftTests\KoduppgiftTests.csproj", "{F09A1DB7-C831-420A-9CE8-3A5EF45F30C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{00510749-7C98-4510-A93F-46AEBBDA1BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00510749-7C98-4510-A93F-46AEBBDA1BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00510749-7C98-4510-A93F-46AEBBDA1BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F09A1DB7-C831-420A-9CE8-3A5EF45F30C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F09A1DB7-C831-420A-9CE8-3A5EF45F30C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F09A1DB7-C831-420A-9CE8-3A5EF45F30C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F09A1DB7-C831-420A-9CE8-3A5EF45F30C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,11 +4,77 @@
 
 <div aria-label="Apinyckel inmatning">
     <label>Apinyckel</label>
-    <input type="text" id="js-apikey" value="53b0ae237ef3db33940b83560728cae4"/>
-    <input type="button" value="Sätt api" id="js-set-api"/>
-</div>
-<input type="hidden" id="js-api-set" value=false />
-<div>
-    <input type="button" value="Ladda filmer" id="js-load-movie" />
+    <input type="text" id="js-apikey" value="53b0ae237ef3db33940b83560728cae4" />
+    <input type="button" value="Sätt api" id="js-set-api" />
 </div>
 
+<div id="movie"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 " >
+            <h2>TopRatedMovies</h2>
+            <input class="hidden" id="CollapseTopRatedButton" type="button" data-toggle="collapse" href="#collapseTopRated" aria-expanded="true"  value="Visa Topp filmer"/>
+            <div id="TopRatedMovies"style="display:flex; overflow:hidden"></div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div id="RelatedInformation" class="col-12 hidden">
+            <h2>Information</h2>
+            <div class="row">
+                <div class="col-6">
+                    <h3>Kommentarer</h3>
+                    <div id="Comments"></div>
+                </div>
+                <div class="col-6">
+                    <h3>Liknade filmer</h3>
+                    <div id="SimilarMovies"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
+<script type="text/template" id="movieTmpl">
+    <div class="collapse show" id="collapseTopRated">
+    {{#each results}}
+    <div class="card">
+        <div class="card-header">
+            {{title}}
+        </div>
+        <div class="card-img-top">
+            <img style="width: 200px;" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" />
+        </div>
+        <div class="card-body">
+            <input type="button" value="Ladda liknande filmer" onclick="loadMovieInformation({{id}})" />
+            <div>{{overview}}</div>
+        </div>
+    </div>
+    {{/each}}
+    </div>
+</script>
+
+<script type="text/template" id="commentsTmpl">
+    <div>
+        {{page}} av {{total_pages}}
+    </div>
+    {{#each results}}
+    <div class="card">
+        <div class="card-header">
+            {{author_details.username}}
+        </div>
+        <div class="card-body">
+            {{content}}
+        </div>
+    </div>
+    {{/each}}
+    <div>
+        {{page}} av {{total_pages}}
+    </div>
+</script>

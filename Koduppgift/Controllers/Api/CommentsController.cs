@@ -1,26 +1,24 @@
-﻿using Koduppgift.Models;
-using Koduppgift.Utilis;
+﻿using Koduppgift.Utilis;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace Koduppgift.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MostViewedMovies : ControllerBase
+    public class CommentsController : ControllerBase
     {
         private IHttpContextAccessor _contextAccessor;
-        public MostViewedMovies(IHttpContextAccessor httpContextAccessor)
+        public CommentsController(IHttpContextAccessor httpContextAccessor)
         {
             _contextAccessor = httpContextAccessor;
         }
+
         [HttpGet]
-        public string GetMovies()
+        public string Comments(int id)
         {
             var api = new ApiLoad(_contextAccessor);
-            return api.GetTopRatedMovies(1);
-          
+            return api.GetComments(id);
         }
     }
 }
